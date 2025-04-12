@@ -4,8 +4,10 @@ import os
 import sys
 import nmap
 
+print("And off we go...\n")
+
 nm = nmap.PortScanner()
-nm.scan(hosts=sys.argv[1], arguments='-Pn -p- -T5')
+nm.scan(hosts=sys.argv[1], arguments='-Pn -p- --min-rate=10000')
 
 for host in nm.all_hosts():
 
